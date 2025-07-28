@@ -1,5 +1,7 @@
 from fastapi import FastAPI, Request
+from modules.database import connect_to_db, fetch_all_rows, insert_row, close_connection
 import uvicorn
+
 
 
 app = FastAPI()
@@ -18,5 +20,5 @@ async def index(request: Request):
 
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="127.0.0.1", port=8001, reload=True) # dev
-    # uvicorn.run("app:app", host="0.0.0.0", port=8001) # prod
+    uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True) # dev
+    # uvicorn.run("app:app", host="127.0.0.1", port=8000) # prod
